@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -23,11 +24,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import com.example.project_1.Navigation.Routes
 import com.example.project_1.R
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
 
     val CoffeeBrown = Color(0xFFC47B4D)
 
@@ -42,7 +46,8 @@ fun WelcomeScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 26.dp, vertical = 35.dp),
+                .padding(horizontal = 26.dp, vertical = 35.dp)
+                .navigationBarsPadding(),
             verticalArrangement = Arrangement.Bottom,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
@@ -52,12 +57,13 @@ fun WelcomeScreen() {
                 color = Color.White,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.SemiBold,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                lineHeight = 36.sp
             )
 
-            Spacer(modifier = Modifier.padding(34.dp))
+            Spacer(modifier = Modifier.padding(20.dp))
 
-            Button(onClick = { },
+            Button(onClick = { navController.navigate(Routes.HomeScreen)},
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp),
                 colors = ButtonDefaults.buttonColors(

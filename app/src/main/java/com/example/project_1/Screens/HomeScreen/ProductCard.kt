@@ -37,6 +37,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.project_1.Navigation.Routes
 import com.example.project_1.R
 import com.example.project_1.model.Product
 
@@ -44,7 +46,8 @@ import com.example.project_1.model.Product
 @Composable
 fun ProductCard(
     product: Product,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavController
 ) {
 
     val lightBrown = Color(0xFFC67C4E)
@@ -63,6 +66,7 @@ fun ProductCard(
     ){
         Column(modifier = Modifier.padding(9.dp)) {
 
+            //Product image
             Box(
                 modifier = Modifier
                 .fillMaxWidth()
@@ -136,7 +140,7 @@ fun ProductCard(
                 )
 
                 IconButton(
-                    onClick = { },
+                    onClick = { navController.navigate(Routes.DetailScreen(product.id)) },
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = lightBrown,
                         contentColor = Color.White,
