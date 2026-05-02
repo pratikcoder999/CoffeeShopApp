@@ -1,5 +1,4 @@
-package com.example.project_1.DetailScreen
-
+package com.example.project_1.CartScreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -16,20 +15,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import com.example.project_1.R
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Preview(showBackground = true)
 @Composable
-fun AppTopBar(navController: NavController) {
+fun CartScreenTopAppBar() {
 
     TopAppBar(
 
         title = {
 
             Text(
-                text = "Details",
+                text = "Orders",
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(start = 90.dp)
@@ -37,30 +35,12 @@ fun AppTopBar(navController: NavController) {
 
         },
 
-        //heart icon
-        actions = {
-            IconButton(
-                onClick = {},
-                modifier = Modifier.padding(end = 7.dp)
-            ) {
-
-                Icon(
-                    painter = painterResource(R.drawable.regular_outline_heart),
-                    contentDescription = "heart icon",
-                    tint = Color.Black,
-                    modifier = Modifier
-                        .size(59.dp,59.dp)
-                )
-
-            }
-        },
-
 
         // left arrow
         navigationIcon = {
 
             IconButton(
-                onClick = { navController.navigateUp() },
+                onClick = { /*navController.navigateUp()*/ },
             ) {
 
                 Icon(
