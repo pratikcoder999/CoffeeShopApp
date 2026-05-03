@@ -1,4 +1,4 @@
-package com.example.project_1.CartScreen
+package com.example.project_1.Screens.CartScreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -15,12 +15,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.project_1.Navigation.Routes
 import com.example.project_1.R
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview(showBackground = true)
 @Composable
-fun CartScreenTopAppBar() {
+fun CartScreenTopAppBar(navController: NavController) {
 
     TopAppBar(
 
@@ -40,7 +41,7 @@ fun CartScreenTopAppBar() {
         navigationIcon = {
 
             IconButton(
-                onClick = { /*navController.navigateUp()*/ },
+                onClick = { navController.navigate(route = Routes.HomeScreen) },
             ) {
 
                 Icon(

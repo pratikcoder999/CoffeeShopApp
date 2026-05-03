@@ -50,7 +50,7 @@ fun HomeScreen(navController: NavHostController) {
     val CoffeeBrown = Color(0xFFC47B4D)
 
     Scaffold(
-        bottomBar = { MyBottomNavigationBar() }
+        bottomBar = { MyBottomNavigationBar(navController, "Home") }
     ) { innerPadding ->
 
         Box(

@@ -33,8 +33,9 @@ fun DetailScreen(productId: Int, navController: NavHostController) {
     )
 
     val selectedProduct = products.find { it.id == productId }
+
     if (selectedProduct == null) {
-        Text(text = "Product not found!", modifier = Modifier.padding(26.dp), color = Color.Red)
+        Text(text = "Product not found!", modifier = Modifier.padding(46.dp), color = Color.Red)
         return
     }
 

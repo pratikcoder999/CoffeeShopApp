@@ -13,6 +13,15 @@ sealed class Routes
     object WelcomeScreen : Routes()
 
     @Serializable
+    object CartScreen : Routes()
+
+    @Serializable
+    object FavouritesScreen : Routes()
+
+    @Serializable
+    object ProfileScreen : Routes()
+
+    @Serializable
     data class DetailScreen(val productId: Int) : Routes()
 
 

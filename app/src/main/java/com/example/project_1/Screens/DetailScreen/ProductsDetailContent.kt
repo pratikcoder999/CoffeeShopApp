@@ -111,6 +111,8 @@ fun ProductsDetailContent(product: Product, innerPaddingValues: PaddingValues) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
+
+        //Size chip
         var selectedSizeText by remember { mutableStateOf("M") }
 
         Row(
@@ -122,7 +124,7 @@ fun ProductsDetailContent(product: Product, innerPaddingValues: PaddingValues) {
                 SelectSizeChip(
                     sizeText = size,
                     selected = selectedSizeText == size,
-                    onClick = { selectedSizeText == size },
+                    onClick = { selectedSizeText = size },
                     modifier = Modifier
                         .weight(1f)
                         .height(height = 46.dp)
