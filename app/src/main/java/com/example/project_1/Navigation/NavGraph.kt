@@ -38,7 +38,7 @@ fun NavGraph() {
             FavouritesScreen(navController)
         }
 
-        composable<Routes.FavouritesScreen> {
+        composable<Routes.ProfileScreen> {
             ProfileScreen(navController)
         }
 
