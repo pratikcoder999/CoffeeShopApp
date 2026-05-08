@@ -41,7 +41,13 @@ fun CartScreenTopAppBar(navController: NavController) {
         navigationIcon = {
 
             IconButton(
-                onClick = { navController.navigate(route = Routes.HomeScreen) },
+                onClick = { navController.navigate(route = Routes.HomeScreen){
+                    popUpTo(navController.graph.startDestinationId) {
+                        inclusive = false
+                    }
+                    launchSingleTop = true
+                }
+            }
             ) {
 
                 Icon(

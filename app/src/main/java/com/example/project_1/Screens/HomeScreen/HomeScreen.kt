@@ -4,6 +4,8 @@ package com.example.project_1.Screens.HomeScreen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,6 +35,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -71,17 +74,17 @@ fun HomeScreen(navController: NavHostController) {
             // Displaying Products
             val products = listOf(
 
-                Product(id = 1,  "Espresso", "Strong and rich", 3.80, R.drawable.coffee_2),
-                Product(id = 2,  "Latte", "Smooth and creamy", 4.50, R.drawable.coffee_3),
-                Product(id = 3,  "Cappuccino", "With Chocolate", 4.80, R.drawable.coffee_1),
-                Product(id = 4,  "Mocha", "Cocoa flavored", 2.80, R.drawable.coffee_4),
-                Product(id = 5,  "Macchiato", "Bold and milky", 5.80, R.drawable.coffee_5),
-                Product(id = 6,  "Flat White", "Velvety smooth", 3.80, R.drawable.coffee_6),
-                Product(id = 7,  "Iced Mocha", "Refreshing and rich", 5.70, R.drawable.coffee_4),
+                Product(id = 1, "Espresso", "Strong and rich", 3.80, R.drawable.coffee_2),
+                Product(id = 2, "Latte", "Smooth and creamy", 4.50, R.drawable.coffee_3),
+                Product(id = 3, "Cappuccino", "With Chocolate", 4.80, R.drawable.coffee_1),
+                Product(id = 4, "Mocha", "Cocoa flavored", 2.80, R.drawable.coffee_4),
+                Product(id = 5, "Macchiato", "Bold and milky", 5.80, R.drawable.coffee_5),
+                Product(id = 6, "Flat White", "Velvety smooth", 3.80, R.drawable.coffee_6),
+                Product(id = 7, "Iced Mocha", "Refreshing and rich", 5.70, R.drawable.coffee_4),
 
-            )
+                )
 
-            ProductsGrid(products = products, navController = navController){
+            ProductsGrid(products = products, navController = navController) {
                 Text(
                     text = "Location",
                     color = Color.Gray,
@@ -183,9 +186,8 @@ fun HomeScreen(navController: NavHostController) {
                 Spacer(modifier = Modifier.height(7.dp))
 
                 HomeScreenCategories() //file under Homescreen package contains category list of coffees.
-
             }
-
         }
     }
 }
+
